@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbaFileRenamer", "NbaFileRenamer\NbaFileRenamer.csproj", "{F3908146-2101-43FB-9831-6BF6E3C70E96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NbaFileRenamer.Tests", "NbaFileRenamer.Tests\NbaFileRenamer.Tests.csproj", "{3BEC4912-7550-4CA1-A3CA-4B4CCC76DA1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3908146-2101-43FB-9831-6BF6E3C70E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3908146-2101-43FB-9831-6BF6E3C70E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3908146-2101-43FB-9831-6BF6E3C70E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3908146-2101-43FB-9831-6BF6E3C70E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEC4912-7550-4CA1-A3CA-4B4CCC76DA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEC4912-7550-4CA1-A3CA-4B4CCC76DA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEC4912-7550-4CA1-A3CA-4B4CCC76DA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEC4912-7550-4CA1-A3CA-4B4CCC76DA1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
