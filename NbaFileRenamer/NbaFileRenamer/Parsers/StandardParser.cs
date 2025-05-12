@@ -1,5 +1,3 @@
-using System.Globalization;
-
 namespace NbaFileRenamer.Parsers;
 
 public class StandardParser : Parser
@@ -10,9 +8,5 @@ public class StandardParser : Parser
     {
     }
 
-    protected override DateTime GetDate(string input)
-    {
-        var match = Regex.Match(input);
-        return DateTime.ParseExact(match.Groups["date"].Value, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-    }
+    protected override string DateFormat => "dd.MM.yyyy";
 }
