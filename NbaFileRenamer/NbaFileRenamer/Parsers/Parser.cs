@@ -1,14 +1,16 @@
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace NbaFileRenamer.Parsers;
 
 public abstract class Parser
 {
-    protected readonly Regex Regex;
+    private readonly Regex _regex;
+    protected abstract string DateFormat { get; } 
 
     protected Parser(Regex regex)
     {
-        Regex = regex;
+        _regex = regex;
     }
     
     protected string GetTeamFullName(string input)
@@ -58,25 +60,32 @@ public abstract class Parser
         return $"{date:yyyy-MM-dd} {awayTeam} at {homeTeam}{fileExtension}";
     }
 
-    public virtual bool IsMatching(string input) => Regex.IsMatch(input);
+    public virtual bool IsMatching(string input) => _regex.IsMatch(input);
 
     protected virtual string GetFileExtension(string input)
     {
-        var match = Regex.Match(input);
+        var match = _regex.Match(input);
         return match.Groups["extension"].Value;
     }
 
     protected virtual string GetHomeTeam(string input)
     {
-        var match = Regex.Match(input);
+        var match = _regex.Match(input);
         return match.Groups["homeTeam"].Value;
     }
 
     protected virtual string GetAwayTeam(string input)
     {
-        var match = Regex.Match(input);
+        var match = _regex.Match(input);
         return match.Groups["awayTeam"].Value;
     }
 
-    protected abstract DateTime GetDate(string input);
+    protected virtual DateTime GetDate(string input)
+    {
+        var match = _regex.Match(input);
+        var value = match.Groups["date"].Value;
+        
+        return DateTime.ParseExact(value, DateFormat, CultureInfo.InvariantCulture);
+
+    }
 }
